@@ -1,0 +1,2 @@
+-- Advanced SQL Lesson 2: Fans
+-- In this lesson, we will learn how to count the number of fans for each artist.

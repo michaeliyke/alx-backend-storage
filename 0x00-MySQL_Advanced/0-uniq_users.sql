@@ -1,0 +1,2 @@
+-- Advanced SQL Lesson 0: Unique Users
+-- In this lesson, we will learn how to count the number of unique users.

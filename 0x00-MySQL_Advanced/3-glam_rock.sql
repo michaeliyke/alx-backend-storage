@@ -1,0 +1,2 @@
+-- Advanced SQL Lesson 3: Glam Rock
+-- In this lesson, we will learn how to count the number of glam rock fans.

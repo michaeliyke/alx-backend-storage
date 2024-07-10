@@ -1,0 +1,2 @@
+-- Advanced SQL Lesson 8: My Names
+-- In this lesson, we will learn how to count the number of users with a specific name.

@@ -1,0 +1,2 @@
+-- Advanced SQL Lesson 4: Store
+-- In this lesson, we will learn how to count the number of purchases for each album.

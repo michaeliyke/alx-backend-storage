@@ -1,0 +1,2 @@
+-- Advanced SQL Lesson 7: Average Score
+-- In this lesson, we will learn how to calculate the average score for each album.

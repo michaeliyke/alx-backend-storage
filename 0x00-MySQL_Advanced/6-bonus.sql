@@ -1,0 +1,2 @@
+-- Advanced SQL Lesson 6: Bonus
+-- In this lesson, we will learn how to count the number of users who have purchased all of an artist's albums.

@@ -1,0 +1,2 @@
+-- Advanced SQL Lesson 10: Div
+-- In this lesson, we will learn how to divide two numbers.

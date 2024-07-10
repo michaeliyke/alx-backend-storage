@@ -1,0 +1,2 @@
+-- Advanced SQL Lesson 5: Valid Email
+-- In this lesson, we will learn how to count the number of users with valid email addresses.

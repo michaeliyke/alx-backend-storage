@@ -1,0 +1,2 @@
+-- Advanced SQL Lesson 9: Index Name Score
+-- In this lesson, we will learn how to create an index on the name column and calculate the score for each album.

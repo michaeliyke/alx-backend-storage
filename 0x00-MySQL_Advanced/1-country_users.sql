@@ -1,0 +1,2 @@
+-- Advanced SQL Lesson 1: Country Users
+-- In this lesson, we will learn how to count the number of users from each country.

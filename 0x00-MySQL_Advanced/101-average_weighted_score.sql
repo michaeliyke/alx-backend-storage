@@ -1,0 +1,2 @@
+-- Advanced SQL Lesson 101: Average Weighted Score
+-- In this lesson, we will learn how to calculate the average weighted score for each album.
