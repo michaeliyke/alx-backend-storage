@@ -1,0 +1,11 @@
+# Ignore 4-store.sql
+4-store.sql
+
+# Ignore other SQL files in the sql directory
+sql/*.sql
+
+# Ignore specific directory
+node_modules/
+
+# Ignore specific file types
+*.min.js
