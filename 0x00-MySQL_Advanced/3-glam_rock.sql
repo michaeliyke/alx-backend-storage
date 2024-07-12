@@ -1,2 +1,7 @@
 -- Advanced SQL Lesson 3: Glam Rock
--- In this lesson, we will learn how to count the number of glam rock fans.
+-- Lists all bands with Glam rock as their main style, ranked by their longevity
+SELECT band_name,
+	ABS(split - formed) AS lifespan
+FROM metal_bands
+WHERE style LIKE '%Glam rock%'
+ORDER BY lifespan DESC;
