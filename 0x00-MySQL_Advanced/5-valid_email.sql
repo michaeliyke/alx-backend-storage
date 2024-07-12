@@ -8,14 +8,14 @@ DELIMITER //
 -- start of trigger
 CREATE TRIGGER valid_email_reset
 BEFORE UPDATE ON users
-FOR EACH ROW
+FOR EACH ROW -- for each row being updated
 BEGIN
-	-- If email changes, reset valid_email to 0
-	IF NEW.email!=OLD.email THEN
-		SET NEW.valid_email=0;
+	-- If email its email has changed,
+	-- set its valid_email to 0 and continue the update with this new change.
+	IF NEW.email != OLD.email THEN
+		SET NEW.valid_email = 0;
 	END IF;
 END;
-
 -- end of trigger
 //
 
