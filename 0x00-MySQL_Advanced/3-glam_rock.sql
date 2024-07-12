@@ -4,4 +4,5 @@ SELECT band_name,
 	ABS(split - formed) AS lifespan
 FROM metal_bands
 WHERE style LIKE '%Glam rock%'
+	AND split <= 2022
 ORDER BY lifespan DESC;
