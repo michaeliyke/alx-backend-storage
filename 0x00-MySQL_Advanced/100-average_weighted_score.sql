@@ -8,21 +8,21 @@ DELIMITER //
 CREATE PROCEDURE ComputeAverageWeightedScoreForUser(IN user_id INT)
 BEGIN
 	-- Declare variables
-	DECLARE weighted_total_score INT;
-	DECLARE total_weight INT;
-	DECLARE average_score INT;
+	DECLARE weighted_total_score FLOAT;
+	DECLARE total_weight FLOAT;
+	DECLARE average_score FLOAT;
 
 	 -- Calculate the sum of weighted scores for the user
 	SELECT SUM(corrections.score * projects.weight) INTO weighted_total_score
 	FROM corrections
-	JOIN projects
+	INNER JOIN projects
 	ON project_id = id
 	WHERE corrections.user_id = user_id;
 
 	 -- Calculate the total weight of projects for the user
 	SELECT SUM(projects.weight) INTO total_weight
 	FROM corrections
-	JOIN projects
+	INNER JOIN projects
 	ON corrections.project_id = projects.id
 	WHERE corrections.user_id = user_id;
 
