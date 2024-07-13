@@ -6,25 +6,16 @@ DROP PROCEDURE IF EXISTS ComputeAverageScoreForUser;
 
 DELIMITER //
 
-CREATE PROCEDURE ComputeAverageScoreForUser(IN user_id INT)
+CREATE PROCEDURE ComputeAverageScoreForUser(IN userid INT)
 BEGIN  -- Multi-statement block starts here. Not necessary for single-statement blocks.
-
-	-- Declare variables
+	-- Declare a variable to store the average score
 	DECLARE avg_score FLOAT;
-	DECLARE total_score FLOAT;
-	DECLARE total_projects INT;
 
-	SELECT SUM(score), COUNT(*) INTO total_score, total_projects FROM corrections WHERE user_id = user_id;
-
-	-- Calculate average score
-	IF total_projects = 0 THEN
-		SET avg_score = 0;
-	ELSE
-		SET avg_score = total_score / total_projects;
-	END IF;
+	-- Compute the average score for the user
+	SELECT AVG(score) INTO avg_score FROM corrections WHERE user_id = userid;
 
 	-- Update the user's average score in the users table
-	UPDATE users SET average_score = avg_score WHERE id = user_id;
+	UPDATE users SET average_score = avg_score WHERE id = userid;
 END//
 
 DELIMITER ;
