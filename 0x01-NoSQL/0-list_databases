@@ -1,2 +1,4 @@
 // MongoDB file: mongo/mongosh
 // list all databases in MongoDB.
+
+show dbs
