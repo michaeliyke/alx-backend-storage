@@ -1,0 +1,2 @@
+// MongoDB file: mongo/mongosh
+// Lists all documents with name="Holberton school" in the collection school
