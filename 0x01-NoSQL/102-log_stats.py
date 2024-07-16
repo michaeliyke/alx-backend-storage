@@ -8,13 +8,13 @@ of the database logs
 def log_stats(nginx):
     """Provides some stats about Nginx logs stored in MongoDB"""
 
-    all_ = nginx.count_documents({})
-    get = nginx.count_documents({'method': 'GET'})
-    post = nginx.count_documents({'method': 'POST'})
-    put = nginx.count_documents({'method': 'PUT'})
-    patch = nginx.count_documents({'method': 'PATCH'})
-    delete = nginx.count_documents({'method': 'DELETE'})
-    status = nginx.count_documents({'method': 'GET', 'path': '/status'})
+    all_ = len(list(nginx.find({})))
+    get = len(list(nginx.find({'method': 'GET'})))
+    post = len(list(nginx.find({'method': 'POST'})))
+    put = len(list(nginx.find({'method': 'PUT'})))
+    patch = len(list(nginx.find({'method': 'PATCH'})))
+    delete = len(list(nginx.find({'method': 'DELETE'})))
+    status = len(list(nginx.find({'method': 'GET', 'path': '/status'})))
 
     print(f"{all_} logs")
     print("Methods:")
