@@ -4,19 +4,23 @@
 
 def log_stats(nginx):
     """Provides some stats about Nginx logs stored in MongoDB"""
-    print(f"{nginx.count_documents({})} logs")
+
+    all_ = nginx.count_documents({})
+    get = nginx.count_documents({'method': 'GET'})
+    post = nginx.count_documents({'method': 'POST'})
+    put = nginx.count_documents({'method': 'PUT'})
+    patch = nginx.count_documents({'method': 'PATCH'})
+    delete = nginx.count_documents({'method': 'DELETE'})
+    status = nginx.count_documents({'method': 'GET', 'path': '/status'})
+
+    print(f"{all_} logs")
     print("Methods:")
-    print(
-        f"\tmethod GET: {nginx.count_documents({'method': 'GET'})}")
-    print(
-        f"\tmethod POST: {nginx.count_documents({'method': 'POST'})}")
-    print(
-        f"\tmethod PUT: {nginx.count_documents({'method': 'PUT'})}")
-    print(
-        f"\tmethod PATCH: {nginx.count_documents({'method': 'PATCH'})}")
-    print(
-        f"\tmethod DELETE: {nginx.count_documents({'method': 'DELETE'})}")
-    print(f"{nginx.count_documents({'method': 'GET', 'path': '/status'})} status check")
+    print(f"    method GET: {get}")
+    print(f"    method POST: {post}")
+    print(f"    method PUT: {put}")
+    print(f"    method PATCH: {patch}")
+    print(f"    method DELETE: {delete}")
+    print(f"{status} status check")
 
 
 if __name__ == "__main__":
