@@ -3,3 +3,6 @@ tmp_res
 
 dump/
 
+
+__pycache__
+
