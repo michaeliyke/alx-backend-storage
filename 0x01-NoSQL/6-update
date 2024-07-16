@@ -1,2 +1,8 @@
 // MongoDB file: mongo/mongosh
 // Adds a new attribute to a document in the collection school
+
+// The database name will be passed as option of mongo command
+db.school.update(
+  { name: "Holberton school" }, // query to match document(s) to update
+  { $set: { address: "972 Mission street" } } // updates to apply
+)
