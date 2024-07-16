@@ -6,5 +6,6 @@ db.school.update(
   // query to match document(s) to update
   { name: "Holberton school" },
   // updates to apply
-  { $set: { address: "972 Mission street" } }
+  { $set: { address: "972 Mission street" } },
+  {multi: true}
 )
