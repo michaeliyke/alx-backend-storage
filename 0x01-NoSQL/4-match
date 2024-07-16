@@ -1,2 +1,6 @@
 // MongoDB file: mongo/mongosh
 // Lists all documents with name="Holberton school" in the collection school
+
+// The db will be supplied as the first argument to the file
+// and be used automatically as the selected db
+db.school.find({ name: "Holberton school" })
