@@ -2,11 +2,11 @@
 """0. Writing strings to Redis"""
 import redis
 import uuid
-from typing import Union
+from typing import Union, Callable
 import functools
 
 
-def count_calls(method: callable) -> callable:
+def count_calls(method: Callable) -> Callable:
     """Count the number of calls to a function"""
     key = method.__qualname__
 
@@ -34,7 +34,7 @@ class Cache:
         self._redis.set(key, data)
         return key
 
-    def get(self, key: str, fn: callable = None):
+    def get(self, key: str, fn: Callable = None):
         """Get the data from the key"""
         data = self._redis.get(key)
         if fn:
