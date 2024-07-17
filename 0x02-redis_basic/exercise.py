@@ -2,6 +2,7 @@
 """0. Writing strings to Redis"""
 import redis
 import uuid
+from typing import Union
 
 
 class Cache:
@@ -12,7 +13,7 @@ class Cache:
         self._redis = redis.Redis()
         self._redis.flushdb()
 
-    def store(self, data: bytes) -> str:
+    def store(self, data: Union[str, float, int, bytes]) -> str:
         """Generate a random key, store the data in Redis using the key
         and return the key"""
         key = str(uuid.uuid4())
